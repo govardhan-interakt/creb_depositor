@@ -18,18 +18,18 @@ getWeb3 = function(){
 getContractAddress = function(wallet_type){
     if(wallet_type == 'USDT')
         return config.TOKENS.USDT.CONTRACT_ADDRESS;
-    if(wallet_type == 'PDT')
-        return config.TOKENS.PDT.CONTRACT_ADDRESS;
+    //if(wallet_type == 'PDT')
+      //  return config.TOKENS.PDT.CONTRACT_ADDRESS;
 }
 //send token transaction
 exports.transferToken = async function(req, res){
     let to = req.body.to;
-    let from = config.PDT_WALLET
+    //let from = config.PDT_WALLET
     var web3 = getWeb3()
     var gasPrice = await web3.eth.getGasPrice();
     var gasLimit = 90000;
     var wallet_type = req.params.coin;
-    let private = config.PDT_SECRETE;
+    //let private = config.PDT_SECRETE;
     var contractAddress = getContractAddress(wallet_type)
     var decimals = wallet_type == 'USDT' ? 6: 18;
     var contractInstance = new web3.eth.Contract(ABI, contractAddress);
