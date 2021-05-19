@@ -3,7 +3,7 @@ console.log('Using bitcoin api: ', production);
 console.log('Do not forget to add wallet keys in production mode :')
 module.exports = {
     PRODUCTION : production,
-    PORT: process.env.PORT || 5750,
+    PORT: process.env.PORT || 4444,
     HOST: production ? 'localhost':'localhost',
     MONGOURL : production ? 'mongodb://atsUSER:ATS49TVXT8wjFv5J@149.248.59.122:27017/atlantis': 'mongodb://ats:ats_user_db_2020@128.199.129.139/atlantis-dev',
     SECRET: 'dfdsgue@uhiue',
